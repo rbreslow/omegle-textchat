@@ -37,10 +37,10 @@ Never use the browser for omegle textchats again!
     # disconnect the chat with current stranger
     omegle.disconnect(done)
     
-    # indicate that you've started typing
+    # indicate that you have started typing
     omegle.typing(done)
   
-    # indicate that you've stopped typing
+    # indicate that you have stopped typing
     omegle.stoppedtyping(done)
   
     # Say something to the stranger
