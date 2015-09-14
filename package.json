@@ -1,0 +1,29 @@
+{
+  "name": "omegle-textchat",
+  "private": false,
+  "version": "1.0.0-alpha.1",
+  "description": "Never use the browser for omegle text chats again!",
+  "main": "index.js",
+  "scripts": {
+    "example": "node example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrprojects/omegle-textchat.git"
+  },
+  "keywords": [
+    "omegle",
+    "chat",
+    "client"
+  ],
+  "author": "Mrprojects <timstour91@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "needle": "^0.10.0",
+    "random-ua": "^0.0.6"
+  },
+  "bugs": {
+    "url": "https://github.com/mrprojects/omegle-textchat/issues"
+  },
+  "homepage": "https://github.com/mrprojects/omegle-textchat#readme"
+}

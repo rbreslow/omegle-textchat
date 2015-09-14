@@ -25,9 +25,11 @@ Never use the browser for omegle textchats again!
     
     setTimeout(function() {
       omegle.say('hello', function(err) {
-        if ( err ) { console.log(err); 
+        if ( err ) { 
+          console.log(err); 
+        }
       });
-    }, 1000);  
+    }, 1000);
   });
 ```
   See example.js for more.
