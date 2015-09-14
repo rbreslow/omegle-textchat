@@ -11,6 +11,7 @@ Never use the browser for omegle textchats again!
   omegle.connect(function(err) {
     if ( err ) {
       console.log(err);
+      return;
     }
     console.log('omegle connected.');
   });
