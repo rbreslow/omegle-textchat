@@ -5,6 +5,7 @@ Never use the browser for omegle textchats again!
   npm install omegle-textchat
 
 ## Example
+```javascript
   var omegle = new Omegle();
   
   omegle.connect(function(err) {
@@ -27,10 +28,11 @@ Never use the browser for omegle textchats again!
       });
     }, 1000);  
   });
-  
+```
   See example.js for more.
 
 ## Manual
+```javascript
   Methods:
     # disconnect the chat with current stranger
     omegle.disconnect(done)
@@ -51,6 +53,6 @@ Never use the browser for omegle textchats again!
     on('error', function(err))
     on('unhandledEvent', function(eventRaw))
     on('strangerDisconnected', function())
-
+```
 ## License
 GPLv3
