@@ -14,7 +14,7 @@ function say(msg) {
         return;
       }
     
-      console.log('said: ' + msg);
+      console.log('replied with: ' + msg);
     });
   }, 1000);
 }
@@ -23,32 +23,27 @@ function say(msg) {
 omegle.connect(function(err) {
   if ( err ) {
     console.log(err);
+    return;
   }
   console.log('omegle connected.');
 });
 
 // Handle events accordingly...
-omegle.on('unhandledEvent', function(event) {
-  console.log('unhandledEvent=' + event);
-});
-
-omegle.on('strangerDisconnected', function() {
-  console.log('stranger disconnected.');
-});
-
 omegle.on('gotMessage', function(msg) {
+  // Increment the message counter
   msgCount += 1;
+
+  // Log what the stranger said so we can read it
+  console.log('Stranger said: ' + msg);
+  
   // Ask them if they are a bot, then start repeating what they say as a 
   // question in all caps.
-  if ( msgCount > 1 ) {
-    console.log('Replying...');
-    say(msg.toUpperCase() + '?');
-  }
-  else {
+  if ( msgCount === 1 ) {
     say('hey are u a bot?');
   }
-  
-  console.log(msg);
+  else {
+    say(msg.toUpperCase() + '?');  
+  }
 });
 
 omegle.on('stoppedTyping', function() {
@@ -57,6 +52,14 @@ omegle.on('stoppedTyping', function() {
 
 omegle.on('typing', function() {
   console.log('Stranger is typing.');
+});
+
+omegle.on('strangerDisconnected', function() {
+  console.log('stranger disconnected.');
+});
+
+omegle.on('unhandledEvent', function(event) {
+  console.log('unhandledEvent=' + event);
 });
 
 omegle.on('error', function(err) {
