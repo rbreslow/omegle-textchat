@@ -5,6 +5,8 @@ Never use the browser for omegle textchats again!
   npm install omegle-textchat
 
 ## Example
+  This example initiates a chat session, and then replies 
+  'hello' 1 second after each message received
 ```javascript
   var omegle = new Omegle();
   
@@ -20,6 +22,7 @@ Never use the browser for omegle textchats again!
     console.log('Stranger is typing.');
   });
   
+  // when we get a message, we respond hello 1 second later.
   omegle.on('gotMessage', function(msg) {
     console.log('Stranger said: ' + msg);
     
