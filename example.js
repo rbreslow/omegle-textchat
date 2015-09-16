@@ -1,11 +1,13 @@
-var Omegle = require('./index.js');
-var omegle = new Omegle();
+var Omegle = require('./index.js')
+, omegle = new Omegle();
+
+// Holds the amount of messages received, so we can know when to respond 
+// differently (for the sake of example)
 var msgCount = 0;
 
+// Replies to stranger
 function say(msg) {
-  console.log('Saying...');
   setTimeout(function() {
-    console.log('About to say...');
     omegle.say(msg, function(err) {
       if ( err ) {
         console.log('Say error: ' + err);
@@ -17,6 +19,7 @@ function say(msg) {
   }, 1000);
 }
 
+// Instantiate a chat session
 omegle.connect(function(err) {
   if ( err ) {
     console.log(err);
@@ -24,6 +27,7 @@ omegle.connect(function(err) {
   console.log('omegle connected.');
 });
 
+// Handle events accordingly...
 omegle.on('unhandledEvent', function(event) {
   console.log('unhandledEvent=' + event);
 });
@@ -41,7 +45,6 @@ omegle.on('gotMessage', function(msg) {
     say(msg.toUpperCase() + '?');
   }
   else {
-    console.log('Replying...');
     say('hey are u a bot?');
   }
   

@@ -79,7 +79,7 @@ function request(url, method, post, done) {
   
   needle.defaults({user_agent: USERAGENT});
 
-  console.log(method.toUpperCase() + ' "' + url + '"');
+  //console.log(method.toUpperCase() + ' "' + url + '"');
     
   if ( method.toLowerCase() === 'get' ) {
     needle.get(url, options, requestCallback);
@@ -280,7 +280,7 @@ Omegle.prototype.say = function(msg, done) {
   post = {id: this.clientId, msg: msg};
   sendUrl = 'http://' + this.host + API.send;
 
-  console.log('post: ' + JSON.stringify(post));
+  //console.log('post: ' + JSON.stringify(post));
   request(sendUrl, 'post', post, function(err) {
     if ( err ) {
       self.emit('error', err);
