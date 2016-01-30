@@ -191,7 +191,7 @@ Omegle.prototype.captureEvents = function() {
           return;
         }
 
-        self.emit('idleDisconnect', {});
+        self.emit('idleDisconnect');
       });
     }
   
