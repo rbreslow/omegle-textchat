@@ -187,11 +187,11 @@ Omegle.prototype.captureEvents = function() {
       
       return self.disconnect(function(err) {
         if ( err ) {
-          console.log('error disconnecting=' + err);
+          self.emit('idleDisconnect', err);
           return;
         }
-      
-        console.log('disconnected');
+
+        self.emit('idleDisconnect', {});
       });
     }
   
